@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import axios from 'axios';
+import './assets/style/tailwind.css';
 // import.meta.env.VITE_GIPHY_API_KEY;
 // Load environment variables from .env file
 // require('dotenv').config();

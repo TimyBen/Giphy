@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container mx-auto p-4">
     <TrendingGifs />
-    <SearchGifs />
+    <!-- <SearchGifs /> -->
     <!-- GifDetails will be dynamically displayed based on user interaction -->
     <GifDetails :selectedGif="selectedGif" v-if="selectedGif" />
   </div>
@@ -9,14 +9,14 @@
 
 <script>
 import TrendingGifs from "@/components/TrendingGifs.vue";
-import SearchGifs from "@/components/SearchGifs.vue";
-import GifDetails from "@/components/GifDetails.vue";
+// import SearchGifs from "@/components/SearchGifs.vue";
+// import GifDetails from "@/components/GifDetails.vue";
 
 export default {
   components: {
     TrendingGifs,
-    SearchGifs,
-    GifDetails,
+    // SearchGifs,
+    // GifDetails,
   },
   data() {
     return {
