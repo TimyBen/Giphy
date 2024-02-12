@@ -102,6 +102,30 @@ export default {
         this.loading = false;
       }
     },
+    async searchGifs() {
+      try {
+        this.loading = true;
+        this.offset = 0; // Reset offset when searching
+        const response = await this.$axios.get("/gifs/search", {
+          params: {
+            q: this.searchQuery,
+            offset: this.offset,
+            limit: this.limit,
+          },
+        });
+        this.gifs = response.data.data;
+        this.hasMore = response.data.pagination.total_count > this.limit;
+        this.visibleGifs = this.gifs;
+
+        // Redirect to the search page
+        // this.$router.push({ path: "/search", query: { q: this.searchQuery } });
+      } catch (error) {
+        console.error("Error fetching GIFs:", error);
+      } finally {
+        this.loading = false;
+      }
+    },
+
     async loadMore() {
       try {
         this.loading = true;
@@ -126,7 +150,8 @@ export default {
     },
     async search() {
       // Trigger search when the button is clicked
-      this.fetchGifs();
+      this.searchGifs();
+      // this.$router.push("/search");
     },
     expandGif(gif) {
       this.selectedGif = gif;

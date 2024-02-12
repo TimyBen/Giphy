@@ -15,7 +15,7 @@ import TrendingGifs from "@/components/TrendingGifs.vue";
 export default {
   components: {
     TrendingGifs,
-    // SearchGifs,
+    // SearchGifs
     // GifDetails,
   },
   data() {

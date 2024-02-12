@@ -7,9 +7,9 @@ import './assets/style/tailwind.css';
 // require('dotenv').config();
 
 const app = createApp(App);
-
+const baseURL = 'https://api.giphy.com/v1';
 // Configure Axios with Giphy API base URL and API key
-axios.defaults.baseURL = 'https://api.giphy.com/v1';
+axios.defaults.baseURL = baseURL
 axios.defaults.params = {
     api_key: 'WzbKB2NxPaW4pcErMfWEHjvScdfPk7ze',
     limit: 25,
